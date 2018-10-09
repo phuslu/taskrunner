@@ -1,0 +1,30 @@
+.DS_Store
+.idea
+.vscode
+*.iml
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.swp
+*.code-workspace
+
+# Python:
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+__pycache__
+
+# virtualenv
+.venv
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# toml config
+.env
+production*.toml
