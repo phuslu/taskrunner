@@ -1,19 +1,10 @@
-[[source]]
-url = "https://mirrors.aliyun.com/pypi/simple/"
-verify_ssl = true
-name = "pypi"
-
 [packages]
 apscheduler = "*"
 toml = "*"
-pymysql = "*"
-records = "*"
 supervisor = {git = "https://github.com/Supervisor/supervisor"}
-pytz = "*"
 requests = "*"
-pip = "==18.0"
 
 [dev-packages]
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

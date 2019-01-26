@@ -1,0 +1,20 @@
+[Unit]
+Wants=network-online.target
+After=network.target network-online.target
+Description=taskrunner
+
+[Service]
+WorkingDirectory=/opt/taskrunner
+ExecStart=/usr/local/bin/pipenv run supervisord
+Environment="PYTHONDONTWRITEBYTECODE=x"
+Type=forking
+KillMode=process
+Restart=on-failure
+LimitNOFILE=100000
+LimitNPROC=100000
+User=phuslu
+Group=phuslu
+
+[Install]
+WantedBy=multi-user.target
+

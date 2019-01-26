@@ -1,6 +1,2 @@
 # ddns for lab.phus.lu
-*/2 * * * * timeout 30 /home/phuslu/ddns/ddns aliyun --key ${ALI_KEY} --secret ${ALI_SECRET} --domain lab.phus.lu
-# promvps splunk log
-*/10 * * * * rsync -avz --delete hkg.phus.lu:~/promvps/ --include="promvps.20*.log" --exclude="*" /home/splunk/promvps/hkg.phus.lu/
-*/10 * * * * rsync -avz --delete sel.phus.lu:~/promvps/ --include="promvps.20*.log" --exclude="*" /home/splunk/promvps/sel.phus.lu/
-*/10 * * * * rsync -avz --delete kwe.phus.lu:/opt/promvps/ --include="promvps.20*.log" --exclude="*" /home/splunk/promvps/kwe.phus.lu/
+*/2 * * * * timeout 30 python /home/phuslu/ddns/ddns aliyun --key ${ALI_KEY} --secret ${ALI_SECRET} --domain lab.phus.lu
