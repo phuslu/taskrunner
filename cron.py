@@ -31,12 +31,13 @@ def do_job(name: str, command: str, timeout: object):
 def start_background_scheduler():
     """start a background scheduler"""
     for key, value in CONFIG.get('enviroment', {}).items():
-        os.environ[key] = value
+        os.environ[key.lower()] = value
         os.environ[key.upper()] = value
-    scheduler = apscheduler.schedulers.background.BackgroundScheduler()
+    timezone = CONFIG['default'].get('timezone', 'UTC')
+    scheduler = apscheduler.schedulers.background.BackgroundScheduler(timezone=timezone)
     for name, kwargs in CONFIG['job'].items():
         minute, hour, day, month, day_of_week = kwargs['cron'].split()
-        scheduler.add_job(do_job, 'cron', args=(name, kwargs['command'], kwargs.get('timeout')),
+        scheduler.add_job(do_job, 'cron', args=(name, kwargs['command'], kwargs.get('timeout')), name=name,
                           minute=minute, hour=hour, day=day, month=month, day_of_week=day_of_week)
     scheduler.start()
     return scheduler
@@ -45,7 +46,7 @@ def start_background_scheduler():
 def main():
     """main scheduler"""
     scheduler = start_background_scheduler()
-    crontab = CONFIG['default']['crontab']
+    crontab = os.getenv('ENV', 'development') + '.toml'
     last_mtime = os.path.getmtime(crontab)
     while True:
         time.sleep(1)

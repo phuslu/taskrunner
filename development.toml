@@ -1,7 +1,12 @@
 [default]
 log_level = 'info'
 log_format = '%(asctime)s [%(levelname)s] %(filename)s@%(lineno)s - %(funcName)s(): %(message)s'
+timezone = 'UTC'
 log_size = 52428800
+
+[enviroment]
+'FOR_BAR' = '1'
+'TEST_A' = '2'
 
 [job.python_example]
 cron = '*/2 * * * *'
