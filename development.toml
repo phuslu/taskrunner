@@ -1,8 +1,9 @@
 [default]
 log_level = 'info'
 log_format = '%(asctime)s [%(levelname)s] %(filename)s@%(lineno)s - %(funcName)s(): %(message)s'
-crontab = 'crontab'
+log_size = 52428800
 
-[enviroment]
-ali_key='1234567890123456'
-ali_secret='123456789012345678901234567890'
+[job.python_example]
+cron = '*/2 * * * *'
+timeout = 10
+command = 'python -c "import sys; print(sys.executable)"'

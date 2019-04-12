@@ -8,7 +8,7 @@ see [development.toml](development.toml)
 ```bash
   sudo apt install python-pip3
   sudo pip3 install pipenv
-  env PIPENV_VENV_IN_PROJECT=1 pipenv install --three
+  env PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
 
 ### Start Cron Daemon

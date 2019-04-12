@@ -1,2 +1,0 @@
-# ddns for lab.phus.lu
-*/2 * * * * timeout 30 python /home/phuslu/ddns/ddns aliyun --key ${ALI_KEY} --secret ${ALI_SECRET} --domain lab.phus.lu
