@@ -4,11 +4,9 @@ a task runner for our cron jobs
 ### Configuraion
 see [development.toml](development.toml)
 
-### Installation
+### Deploy
 ```bash
-  sudo apt install python-pip3
-  sudo pip3 install pipenv
-  env PIPENV_VENV_IN_PROJECT=1 pipenv install
+  IP=<IP> ./Jenkinsfile.sh
 ```
 
 ### Start Cron Daemon

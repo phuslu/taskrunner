@@ -1,6 +1,6 @@
-.env
 .venv/
+.env
+*.log
+*.log.1
 production*.toml
-cron.log
-supervisord.log
 supervisord.pid
