@@ -1,0 +1,6 @@
+Host *
+  User centos
+  IdentityFile ~/.ssh/dev01.pem
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  ConnectTimeout 10
