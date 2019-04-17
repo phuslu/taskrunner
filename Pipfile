@@ -1,10 +1,11 @@
 [packages]
 apscheduler = "*"
 toml = "*"
-supervisor = {git = "https://github.com/Supervisor/supervisor"}
+supervisor = "*"
 requests = "*"
 
 [dev-packages]
+bpython = "*"
 
 [requires]
 python_version = "3.6"

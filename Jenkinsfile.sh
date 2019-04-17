@@ -38,7 +38,7 @@ do
 				# Ubuntu 16
 				sudo add-apt-repository -y ppa:jonathonf/python-3.6
 				sudo apt-get update -y
-				sudo apt-get install -y python3.6 python3.6-dev git
+				sudo apt-get install -y python3.6 python3.6-dev
 				sudo pip3 install pipenv
 			elif uname -r | grep -q -w el7; then
 				# CentOS 7
